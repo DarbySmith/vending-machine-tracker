@@ -20,8 +20,16 @@ RSpec.describe Machine, type: :model do
   end
 
   describe 'instance methods' do
-    it 'shows the average price for all snacks in the machine' do
-      expect(@machine_1.average_price_snacks).to eq(1.75)
+    describe '#average_price_snacks' do
+      it 'shows the average price for all snacks in the machine' do
+          expect(@machine_1.average_price_snacks).to eq(1.75)
+      end
+    end
+
+    describe '#count_snacks' do
+      it 'counts the unique snacks in a machine' do
+        expect(@machine_1.count_snacks).to eq(3)
+      end
     end
   end
 end
